@@ -1,0 +1,288 @@
+/* estilos.css */
+
+/* --- ESTILOS GLOBALES Y DE BODY --- */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 50px; /* Asegúrate de que el body no tenga padding para que el header/footer puedan llegar a los bordes */
+    color: #333;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Ajusta el tamaño de fuente base para que sea responsivo */
+    font-size: 16px; /* Tamaño base en escritorio */
+}
+
+/* --- ESTILOS DE HEADER --- */
+header {
+    background-color: #00000034; /* Fondo semi-transparente */
+    color: white;
+    display: flex;
+    justify-content: space-between; /* Logo a la izquierda, título a la derecha */
+    align-items: center; /* Centrado vertical */
+    padding: 20px 40px; /* Ajusta el padding horizontal para escritorio */
+    border-radius: 20px; /* Un border-radius de 80px puede verse raro en móviles. Mejor quitarlo o aplicarlo solo en desktop. */
+    /* Añadir un min-height si quieres que el header siempre tenga un alto mínimo */
+    min-height: 100px; /* Ejemplo de altura mínima */
+}
+
+.logo-container img {
+    padding: 0; /* Elimina el padding directo de la imagen para controlarlo desde el contenedor */
+    max-height: 120px; /* Tamaño del logo en escritorio */
+    width: auto;
+    display: block;
+    margin-right: 20px; /* Espacio entre el logo y el título */
+}
+
+.titulo-container {
+    text-align: right;
+    padding: 0; /* Elimina padding directo para controlarlo desde el h1 */
+}
+
+.titulo-container h1 {
+    padding-right: 0; /* Elimina padding-right excesivo */
+    margin: 0;
+    font-size: 3.5em; /* Tamaño de fuente para escritorio */
+    font-family: Vegur, 'PT Sans', Verdana, sans-serif;
+    font-style: italic;
+    color: white;
+}
+
+/* --- ESTILOS DEL MAIN --- */
+main {
+    padding: 20px;
+    margin: 40px 20px; /* Margen superior/inferior más grande, y horizontal */
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+/* --- ESTILOS DE LAS COLUMNAS (CONTENEDOR FLEX) --- */
+.contend-double {
+    display: flex;
+    flex-wrap: wrap; /* Esencial para que las columnas salten de línea */
+    justify-content: center; /* Centra las columnas cuando hay espacio, o si solo hay una */
+    gap: 30px; /* Espacio entre las columnas */
+    padding: 0; /* Padding interno ya lo tienen las columnas */
+    font-family: 'Gill Sans'; /* Asegúrate de que la fuente sea segura o importada */
+}
+
+/* --- ESTILOS PARA CADA COLUMNA INDIVIDUAL --- */
+.info-container,
+.menu-container {
+    flex: 1; /* Permite crecer y encogerse */
+    min-width: 300px; /* Mantienen este ancho mínimo antes de apilarse */
+    max-width: 500px; /* Opcional: para que no se hagan demasiado grandes en pantallas muy amplias */
+    padding: 25px;
+    background-color: #00000034; /* Fondo semi-transparente */
+    border-radius: 8px;
+    color: whitesmoke;
+    text-align: center;
+}
+
+.info-container p {
+    font-size: 1.2em; /* Ajusta el tamaño de la fuente para que sea legible */
+    line-height: 1.6; /* Mejora la legibilidad del texto */
+    margin-bottom: 25px;
+}
+
+.info-container img {
+    max-width: 100%; /* Asegura que la imagen no se desborde */
+    height: auto; /* Mantiene la proporción */
+    border-radius: 8px;
+}
+
+.info-container h2,
+.menu-container h2 { /* Aplica estilos similares a los títulos de las columnas y el horario */
+    color: #ffffff;
+    margin-top: 0;
+    font-style: italic;
+    font-weight: bold; /* 'bold' es la forma correcta para negrita, no 'font-style: bold;' */
+    font-size: 2em;
+    margin-bottom: 15px; /* Espacio debajo del título */
+}
+
+.menu-container p{
+    font-size: 1.1em; /* Ajusta el tamaño de la fuente para que sea legible */
+    line-height: 1.5; /* Mejora la legibilidad del texto */
+    margin-bottom: 20px; /* Espacio debajo del párrafo */
+}
+
+.menu-container ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Alinea los ítems de la lista a la izquierda */
+    margin-top: 20px;
+}
+
+.menu-container li {
+    margin-bottom: 12px; /* Más espacio entre ítems de menú */
+    font-size: 1.2em; /* Haz el texto del menú más grande */
+    color: #eee; /* Color de texto ligeramente más claro */
+}
+
+
+/* --- ESTILOS DEL CONTENEDOR DE CONTACTO (si está dentro del main) --- */
+/* Si este contenedor está en el main, quizás quieras que sea una columna más */
+/* o que esté por debajo de contend-double. Añado una sección para que lo coloques */
+/* como necesites, pero con estilos responsivos. */
+
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Apila los elementos hijos verticalmente */
+    align-items: center; /* Centra los elementos hijos horizontalmente */
+    justify-content: center;
+    background-color: #00000034;
+    border-radius: 8px;
+    color: whitesmoke;
+    padding: 25px; /* Añadir padding */
+    margin-top: 30px; /* Espacio para separarlo de la sección de columnas */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+    gap: 20px; /* Espacio entre los elementos hijos (botones, texto, etc.) */
+}
+
+.contact-container p { /* Estilo para cualquier párrafo dentro de contact-container */
+    font-size: 1.2em;
+    line-height: 1.5;
+    margin-bottom: 10px;
+}
+
+/* --- ESTILOS DE BOTONES --- */
+.contact-button {
+    background-color: rgb(32, 240, 125);
+    color: white; /* Color del texto del botón */
+    padding: 15px 40px; /* Ajusta padding para que no sea excesivo en móviles */
+    border-radius: 15px;
+    font-family: 'Gill Sans', sans-serif;
+    font-size: 1.2em; /* Tamaño de fuente para el botón */
+    border: none; /* Mejor usar 'border: none;' para eliminar el borde por defecto */
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; /* Transición suave */
+    /* margin-bottom: 20px; Este lo puedes quitar si usas 'gap' en .contact-container */
+    display: inline-block; /* Para que el padding se aplique correctamente si el <a> es de bloque */
+    text-decoration: none; /* Asegura que el botón no tenga subrayado si es un <a> */
+}
+
+.contact-button a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: black; /* Color del texto del enlace dentro del botón */
+    display: block; /* Para que el enlace ocupe todo el espacio del botón */
+    padding: 0; /* Quita padding extra si lo tenías */
+}
+
+.contact-button:hover {
+    background-color: rgb(27, 180, 96);
+    color: black; /* Cambia el color del texto al pasar el ratón */
+    /* border-color: rgb(27, 180, 96); si no tienes borde, esto no hará nada */
+}
+
+
+/* --- MEDIA QUERIES PARA RESPONSIVIDAD --- */
+@media (max-width: 1024px) { /* Tabletas y pantallas pequeñas de laptop */
+    header {
+        padding: 15px 25px; /* Reducir padding en el header */
+    }
+
+    .titulo-container h1 {
+        font-size: 3em; /* Reducir tamaño de título */
+    }
+
+    .logo-container img {
+        max-height: 100px; /* Reducir tamaño del logo */
+    }
+
+    .main {
+        margin: 30px 15px; /* Reducir márgenes en el main */
+    }
+
+    .info-container,
+    .menu-container {
+        min-width: 280px; /* Ligeramente más pequeño el mínimo */
+        padding: 20px;
+    }
+
+    .contact-button {
+        padding: 12px 30px; /* Reducir padding de botón */
+        font-size: 1.1em;
+    }
+}
+
+
+@media (max-width: 768px) { /* Smartphones y tabletas pequeñas (tu media query actual) */
+    body {
+        font-size: 14px; /* Tamaño de fuente base más pequeño para móviles */
+        padding: 0; /* Eliminar padding del body para pantallas muy pequeñas */
+    }
+
+    header {
+        flex-direction: column; /* Apila el logo y el título */
+        text-align: center;
+        padding: 15px 10px;
+        border-radius: 0; /* Header sin bordes redondeados en móvil */
+        min-height: auto; /* Permite que el alto se ajuste */
+    }
+
+    .logo-container {
+        margin-bottom: 10px; /* Espacio entre logo y título apilados */
+    }
+
+    .logo-container img {
+        max-height: 80px; /* Logo más pequeño en móvil */
+        margin-right: 0; /* Quita el margen lateral */
+    }
+
+    .titulo-container {
+        width: 100%; /* Asegura que el contenedor del título ocupe todo el ancho */
+        text-align: center; /* Centra el texto del título */
+    }
+
+    .titulo-container h1 {
+        font-size: 2.2em; /* Título más pequeño en móvil */
+    }
+
+    main {
+        margin: 20px 10px; /* Márgenes más pequeños para el main */
+        padding: 15px;
+    }
+
+    .contend-double {
+        flex-direction: column; /* Las columnas se apilan */
+        align-items: center; /* Centra las columnas apiladas */
+        gap: 20px; /* Reduce el espacio entre columnas apiladas */
+    }
+
+    .info-container,
+    .menu-container {
+        min-width: auto; /* Deshabilita el ancho mínimo para que se adapten al 100% del contenedor */
+        width: 95%; /* Ocupa casi todo el ancho, dejando un pequeño margen */
+        padding: 18px;
+    }
+
+    .info-container p {
+        font-size: 1.1em; /* Texto más pequeño en móvil */
+    }
+
+    .info-container img {
+        max-width: 90%; /* Ajusta la imagen en móvil */
+    }
+
+    .menu-container ul {
+        text-align: center; /* Centra la lista en móvil si se ve mejor */
+    }
+
+    .menu-container li {
+        font-size: 1.05em; /* Texto de lista más pequeño */
+    }
+
+    .contact-container {
+        margin-top: 20px; /* Reduce margen superior */
+        padding: 20px;
+    }
+
+    .contact-button {
+        padding: 10px 25px; /* Botones más pequeños en móvil */
+        font-size: 1.1em;
+    }
+}
